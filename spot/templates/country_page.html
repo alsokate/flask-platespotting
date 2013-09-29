@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+
+{% if not results %}
+That code is not in our records.
+{% endif %}
+{% for code in results %}
+    {{ code.country.country_name }}
+{% endfor %}
+{% endblock content %}
