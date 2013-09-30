@@ -5,13 +5,13 @@
     {% else %}
     <title>Platespotting</title>
     {% endif %}
+  <LINK rel="stylesheet" type="text/css" href="/static/css/base.css">
   </head>
   <body>
+    <div class="main">
       <h1>Which country's diplomat am I yelling at?</h1>
-      <hr>
-
-      {% block content %}{% endblock content %}<br>
-      <hr>
+      {% block content %}{% endblock content %}<br><br>
       <a href="{{ url_for('index') }}">Home</a><br>
+    </div>
   </body>
 </html>

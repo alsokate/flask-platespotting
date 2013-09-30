@@ -1,0 +1,30 @@
+@font-face {
+    font-family: 'webtext-regular';
+    src: url('../fonts/simonetta-regular-webfont.eot?') format('eot'),
+         url('../fonts/simonetta-regular-webfont.woff') format('woff'),
+         url('../fonts/simonetta-regular-webfont.svg') format('svg'),
+         url('../fonts/Simonetta-Regular.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'webtext-ital';
+    src: url('../fonts/simonetta-italic-webfont.eot?') format('eot'),
+         url('../fonts/simonetta-italic-webfont.woff') format('woff'),
+         url('../fonts/simonetta-italic-webfont.svg') format('svg'),
+         url('../fonts/Simonetta-Italic.otf') format('opentype');
+    font-weight: normal;
+    font-style: italic;
+}
+
+html,body {margin:0; padding:0;}
+
+body {font-family: webtext-regular, sans-serif;}
+em {font-family: webtext-ital;}
+
+.main{
+    text-align: center;
+    vertical-align: middle;
+}
