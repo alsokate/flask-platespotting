@@ -2,6 +2,8 @@
 venv
 *.pyc
 virtualenv.py
+db_create.py
+db_migrate.py
 /flask
 /whoosh_index
 /search.db
