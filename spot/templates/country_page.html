@@ -7,6 +7,6 @@
 That code is not in our records.
 {% endif %}
 {% for code in results %}
-    {{ code.country.country_name }}
+    {{ code.country.country_name }}, {{ plate_type }}
 {% endfor %}
 {% endblock content %}
