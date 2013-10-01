@@ -7,9 +7,13 @@
 That code is not in our records.
 {% endif %}
 {% for code in results %}
-    {{ plate_type }}<br>
+{% if plate_type %}
+    {{ plate_type }}<br><br>
+{% else %}
+    That plate type is not in our records.<br><br>
+{% endif %}
     <div class="flag {{ flag_image }}">
-    </div><br>
+    </div><br><br>
     {{ code.country.country_name }} <br><br>
 {% endfor %}
 {% endblock content %}

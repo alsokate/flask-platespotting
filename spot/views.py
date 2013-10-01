@@ -25,12 +25,18 @@ def search():
 @plate.route('/search_results/<query>')
 def search_results(query):
     plate_type_options = {'D': 'Diplomat', 'C': 'Foreign Consul', 'S': 'Non-diplomatic Staff'}
-    plate_type = query[0].upper()
+    plate_type_index = query[0].upper()
+
+    if plate_type_index in plate_type_options:
+        plate_type = plate_type_options[plate_type_index]
+    else:
+        plate_type = ''
+
     country = query[1:3]
     results = Code.query.whoosh_search(country).all()
     flag_image = results[0].country.country_name.replace(' ', '-')
     return render_template('country_page.html',
         query = query,
         results = results,
-        plate_type = plate_type_options[plate_type],
+        plate_type = plate_type,
         flag_image = flag_image)
