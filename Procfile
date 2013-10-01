@@ -1,1 +1,1 @@
-web: unicorn spot:app
+web: gunicorn spot:app
