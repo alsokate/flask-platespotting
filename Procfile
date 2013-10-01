@@ -1,0 +1,1 @@
+web: unicorn spot:app
