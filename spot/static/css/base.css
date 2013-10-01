@@ -1,3 +1,5 @@
+@import "flags.css";
+
 @font-face {
     font-family: 'webtext-regular';
     src: url('../fonts/simonetta-regular-webfont.eot?') format('eot'),
@@ -27,4 +29,9 @@ em {font-family: webtext-ital;}
 .main{
     text-align: center;
     vertical-align: middle;
+}
+
+div {
+    width: 800px;
+    margin: auto;
 }
