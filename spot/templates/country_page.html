@@ -7,6 +7,9 @@
 That code is not in our records.
 {% endif %}
 {% for code in results %}
-    {{ code.country.country_name }}, {{ plate_type }}
+    {{ plate_type }}<br>
+    <div class="flag {{ flag_image }}">
+    </div><br>
+    {{ code.country.country_name }} 
 {% endfor %}
 {% endblock content %}
