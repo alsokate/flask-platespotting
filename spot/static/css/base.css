@@ -21,16 +21,38 @@
     font-style: italic;
 }
 
-html,body {margin:0; padding:0;}
 
-body {font-family: webtext-regular, sans-serif;}
+body {
+    font-family: webtext-regular, sans-serif;
+    text-align: center;
+    height: 100%;
+    margin: 0;
+    padding: 0;    
+}
 em {font-family: webtext-ital;}
 
-.main{
-    text-align: center;
+#map1, #map2 {
+    height: 100%;
 }
 
-div {
-    width: auto;
-    margin: auto;
+.main {
+    display: table-row;
+    margin: 10px;
+    width: 100%;
 }
+.mapbox {
+    width: 33.33%;
+    height: 400px;
+    display: table-cell;
+    vertical-align: middle;
+    padding: 20px;
+}
+
+
+
+
+
+
+
+
+
