@@ -1,19 +1,29 @@
 {% extends "base.html" %}
 
-
 {% block content %}
+<div class="mapbox">
+    <div id="map1">
+    </div>
+</div>
 
-{% if not results %}
-That code is not in our records.
-{% endif %}
-{% for code in results %}
-{% if plate_type %}
-    {{ plate_type }}<br><br>
-{% else %}
-    That plate type is not in our records.<br><br>
-{% endif %}
-    <div class="flag {{ flag_image }}">
-    </div><br><br>
-    {{ code.country.country_name }} <br><br>
-{% endfor %}
+<div class="mapbox">
+    {% if not results %}
+        That code is not in our records.
+    {% endif %}
+    {% if plate_type %}
+        {{ plate_type }}<br><br>
+    {% else %}
+        That plate type is not in our records.<br><br>
+    {% endif %}
+        <div class="flag {{ flag_image }}">
+        </div><br><br>
+        {{ results }} <br><br>
+</div>
+
+<div class="mapbox">
+    <div id="map2">
+    </div>
+</div>
 {% endblock content %}
+
+
