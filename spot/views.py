@@ -1,3 +1,4 @@
+import json
 from flask import render_template, flash, redirect, session, url_for, request, g
 from spot import plate, db
 from forms import SearchForm, IndexForm
@@ -33,14 +34,24 @@ def search_results(query):
         plate_type = plate_type_options[plate_type_index]
 
     country = query[1:3]
-    results = Code.query.whoosh_search(country).all()
+    search = Code.query.whoosh_search(country).all()
+    results = search[0].country.country_name
+    location = search[0].country.mission
+    website = search[0].country.website
 
-    if results:
-        flag_image = results[0].country.country_name.replace(' ', '-')
-        
+    map_data = [results]
+
+
+    if search:
+        flag_image = results.replace(' ', '-')
 
     return render_template('country_page.html',
         query = query,
         results = results,
         plate_type = plate_type,
-        flag_image = flag_image)
+        flag_image = flag_image,
+        data = json.dumps(map_data))
+
+
+
+
