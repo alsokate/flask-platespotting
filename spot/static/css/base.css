@@ -37,10 +37,15 @@ body {
     height: 100%;
 }
 
+.maptable {
+    display: table;
+    text-align: center;
+    width: 100%;
+}
+
 .emb {
     height: 400px;
     display: table-cell;
-    text-align: center;
     vertical-align: middle;
 }
 

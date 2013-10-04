@@ -7,24 +7,28 @@
       </div>
       {% endif %}
       {% if results and not location %}
+      <div class="maptable">
         <div class="emb">
           This country does not have an embassy in the US.
         </div>
+      </div>
       {% endif %}
     </div>
 
     <div class="mapbox">
-      <div class="emb">
-        {% if not results %}
-          That code is not in our records.
-        {% endif %}
-        {% if plate_type and results %}
-          {{ plate_type }}
-          <br><br>
-          <div class="flag {{ flag_image }}"></div>
-          <br><br>
-          {{ results }}
-        {% endif %}
+      <div class="maptable">
+        <div class="emb">
+          {% if not results %}
+            That code is not in our records.
+          {% endif %}
+          {% if plate_type and results %}
+            {{ plate_type }}
+            <br><br>
+            <div class="flag {{ flag_image }}"></div>
+            <br><br>
+            {{ results }}
+          {% endif %}
+        </div>
       </div>
     </div>
 
