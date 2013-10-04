@@ -1,36 +1,36 @@
 {% extends "base.html" %}
-
 {% block content %}
-<div class="box">
+  <div class="box">
     <div class="main">
-        <div class="mapbox">
-            <div id="map1">
-                {% if not location %}
-                <div class="emb">
-                    This country does not have an embassy in the US.
-                </div>
-                {% endif %}
+      <div class="mapbox">
+        <div id="map1">
+          {% if results and not location %}
+            <div class="emb">
+              This country does not have an embassy in the US.
             </div>
+          {% endif %}
         </div>
+      </div>
 
-        <div class="mapbox">
-            {% if not results %}
-                That code is not in our records.
-            {% endif %}
-            {% if plate_type and results %}
-                {{ plate_type }}<br><br>
-            {% endif %}
-                <div class="flag {{ flag_image }}"></div>
-                <br><br>
-                {{ results }} <br><br>
-        </div>
+      <div class="mapbox">
+        {% if not results %}
+          That code is not in our records.
+        {% endif %}
+        {% if plate_type and results %}
+          {{ plate_type }}<br><br>
+        <div class="flag {{ flag_image }}"></div>
+        <br><br>
+        {{ results }} 
+        <br><br>
+        {% endif %}
+      </div>
 
-        <div class="mapbox">
-            <div id="map2">
-            </div>
+      <div class="mapbox">
+        <div id="map2">
         </div>
+      </div>
     </div>
-</div>
+  </div>
 {% endblock content %}
 
 
