@@ -21,43 +21,26 @@
     font-style: italic;
 }
 
-html {
-    width: 100%;
-}
-
 body {
     font-family: webtext-regular, sans-serif;
     text-align: center;
 }
-em {font-family: webtext-ital;}
+
+.mapbox {
+    height: 400px;
+    width: 33%;
+    display: inline-block;
+    vertical-align: top;
+}
 
 #map1, #map2 {
     height: 100%;
 }
 
-.box {
-    display: block;
-    width: 50%;
-    margin: 0px auto;
-}
-
-.main {
-    display: table-row;
-    margin: auto;
-    width: 50%;
-}
-
-.mapbox {
-    width: 33.33%;
-    height: 300px;
-    display: table-cell;
-    vertical-align: middle;
-    padding: 10px;
-}
-
 .emb {
+    height: 400px;
     display: table-cell;
-    height: 300px;
+    text-align: center;
     vertical-align: middle;
 }
 
