@@ -21,13 +21,13 @@
     font-style: italic;
 }
 
+html {
+    width: 100%;
+}
 
 body {
     font-family: webtext-regular, sans-serif;
     text-align: center;
-    height: 100%;
-    margin: 0;
-    padding: 0;    
 }
 em {font-family: webtext-ital;}
 
@@ -35,19 +35,31 @@ em {font-family: webtext-ital;}
     height: 100%;
 }
 
-.main {
-    display: table-row;
-    margin: 10px;
-    width: 100%;
-}
-.mapbox {
-    width: 33.33%;
-    height: 400px;
-    display: table-cell;
-    vertical-align: middle;
-    padding: 20px;
+.box {
+    display: block;
+    width: 50%;
+    margin: 0px auto;
 }
 
+.main {
+    display: table-row;
+    margin: auto;
+    width: 50%;
+}
+
+.mapbox {
+    width: 33.33%;
+    height: 300px;
+    display: table-cell;
+    vertical-align: middle;
+    padding: 10px;
+}
+
+.emb {
+    display: table-cell;
+    height: 300px;
+    vertical-align: middle;
+}
 
 
 
