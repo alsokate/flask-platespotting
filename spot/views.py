@@ -48,7 +48,6 @@ def search_results(query):
         website = search[2]
 
     map_data = [results, location, website]
-    raise
     return render_template('country_page.html',
         query = query,
         results = results,
