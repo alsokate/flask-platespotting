@@ -4,6 +4,5 @@ Werkzeug==0.8.3
 gunicorn==0.17.2
 sqlalchemy==0.7.9
 flask-sqlalchemy==0.16
-flask-whooshalchemy==0.54a
 flask-wtf==0.8.4
 sqlalchemy-migrate
