@@ -4,7 +4,7 @@ from spot import plate, db
 from forms import SearchForm, IndexForm
 import sqlite3
 import os
-db_path = os.path.join('app.db')
+db_path = os.path.abspath('app.db')
 
 @plate.before_request
 def before_request():
