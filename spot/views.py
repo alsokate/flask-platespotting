@@ -2,9 +2,8 @@ import json
 from flask import render_template, redirect, url_for, g
 from spot import plate, db
 from forms import SearchForm, IndexForm
-import sqlite3
-import os
-db_path = os.path.abspath('app.db')
+import psycopg2
+import sys
 
 @plate.before_request
 def before_request():
@@ -57,16 +56,17 @@ def search_results(query):
         data = json.dumps(map_data))
 
 def code_search(c_code):
-    conn = sqlite3.connect(db_path)
-    c = conn.cursor()
+    connection_settings = "host=localhost dbname=app user=kate password=emotiveowl"
+    db = psycopg2.connect(connection_settings)
+    c = db.cursor()
 
-    get_id = c.execute("SELECT country_id FROM code WHERE scramble = '%s'" % c_code)
-    c_id = get_id.fetchone()
-    get_country_info = c.execute("SELECT * from country where id = '%s'" % c_id)
-    c_info = get_country_info.fetchone()
-    name = c_info[1]
-    mission = c_info[2]
-    website = c_info[3]
+    c.execute("""SELECT country_id FROM code WHERE to_tsvector(scramble) @@ to_tsquery('%s');""" % c_code)
+    get_id = c.fetchone()[0]
+    c.execute("""SELECT * FROM country WHERE to_tsvector(CAST (id as text)) @@ to_tsquery('%s');""" % get_id)
+    get_country_data =  c.fetchone()
+    name = get_country_data[1]
+    mission = get_country_data[2]
+    website =  get_country_data[3]
 
     return [name, mission, website]
 
