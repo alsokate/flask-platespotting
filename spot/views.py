@@ -1,6 +1,6 @@
 import json
 from flask import render_template, redirect, url_for, g
-from spot import plate, db
+from spot import plate
 from forms import SearchForm, IndexForm
 import psycopg2
 import sys
@@ -56,7 +56,7 @@ def search_results(query):
         data = json.dumps(map_data))
 
 def code_search(c_code):
-    connection_settings = "host=localhost dbname=app user=kate password=emotiveowl"
+    connection_settings = "host=ec2-54-235-194-252.compute-1.amazonaws.com dbname=das4ugkl3ip6g5 user=fcrgvjtgrhdbru password=1GGFH4zdj3j0A1qxeK5Vdabv9i"
     db = psycopg2.connect(connection_settings)
     c = db.cursor()
 

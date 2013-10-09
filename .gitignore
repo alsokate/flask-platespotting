@@ -1,5 +1,6 @@
 .DS_Store
 venv
+.env
 *.pyc
 virtualenv.py
 db_create.py

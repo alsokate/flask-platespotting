@@ -5,4 +5,5 @@ gunicorn==0.17.2
 sqlalchemy==0.7.9
 flask-sqlalchemy==0.16
 flask-wtf==0.8.4
-sqlalchemy-migrate
+sqlalchemy-migrate==0.7.2
+psycopg2==2.5.1
